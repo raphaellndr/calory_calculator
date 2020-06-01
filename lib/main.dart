@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'custom_text.dart' as ct;
+import 'custom_text.dart';
 import 'calory_page.dart';
 
 
@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: CustomTextAndroid(switchLanguage ? widget.title : 'Calculateur de calories',),
+        title: CustomText(switchLanguage ? widget.title : 'Calculateur de calories',),
         centerTitle: true,
       ),
       body: Center(
@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget> [
-                CustomTextAndroid('Français', color: switchLanguage ? Colors.grey[200] : Colors.black),
+                CustomText('Français', color: switchLanguage ? Colors.grey[200] : Colors.black),
                 Switch(
                   value: switchLanguage, 
                   activeColor: Colors.black,
@@ -63,13 +63,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     });                
                   }
                 ),
-                CustomTextAndroid('English', color: switchLanguage ? Colors.black : Colors.grey[200])
+                CustomText('English', color: switchLanguage ? Colors.black : Colors.grey[200])
               ]
             ),
             RaisedButton(
               onPressed: start,
               color: Colors.grey[800],
-              child: CustomTextAndroid(switchLanguage ? "Discover your daily calories' need" : 'Découvrez votre besoin en calories')
+              child: CustomText(switchLanguage ? "Discover your daily calories' need" : 'Découvrez votre besoin en calories')
             )
           ],
         ),
