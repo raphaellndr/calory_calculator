@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'custom_text.dart';
+import 'custom_text.dart' as ct;
 import 'calory_page.dart';
 
 
@@ -33,16 +33,17 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
+
 class _MyHomePageState extends State<MyHomePage> {
 
-  bool switchLanguage = true;
+  bool switchLanguage = true;  
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: CustomText(switchLanguage ? widget.title : 'Calculateur de calories',),
+        title: CustomTextAndroid(switchLanguage ? widget.title : 'Calculateur de calories',),
         centerTitle: true,
       ),
       body: Center(
@@ -52,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget> [
-                CustomText('Français', color: switchLanguage ? Colors.grey[200] : Colors.black),
+                CustomTextAndroid('Français', color: switchLanguage ? Colors.grey[200] : Colors.black),
                 Switch(
                   value: switchLanguage, 
                   activeColor: Colors.black,
@@ -62,13 +63,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     });                
                   }
                 ),
-                CustomText('English', color: switchLanguage ? Colors.black : Colors.grey[200])
+                CustomTextAndroid('English', color: switchLanguage ? Colors.black : Colors.grey[200])
               ]
             ),
             RaisedButton(
               onPressed: start,
               color: Colors.grey[800],
-              child: CustomText(switchLanguage ? "Discover your daily calories' need" : 'Découvrez votre besoin en calories')
+              child: CustomTextAndroid(switchLanguage ? "Discover your daily calories' need" : 'Découvrez votre besoin en calories')
             )
           ],
         ),

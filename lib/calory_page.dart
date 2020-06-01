@@ -1,4 +1,6 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'main.dart' as main;
 import 'custom_text.dart';
@@ -83,13 +85,29 @@ class _CaloryPage extends State<CaloryPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: setColor(),
-        centerTitle: true,
-        title: Text(widget.title,),
-      ),
-      body: SingleChildScrollView(
+    return GestureDetector(
+      onTap: (() => FocusScope.of(context).requestFocus(FocusNode())),
+      child: Platform.isIOS ?
+        CupertinoPageScaffold(
+          navigationBar: CupertinoNavigationBar(
+            backgroundColor: setColor(),
+            middle: Text(widget.title),
+          ),
+          child: body(),
+        )
+      :Scaffold(
+        appBar: AppBar(
+          backgroundColor: setColor(),
+          centerTitle: true,
+          title: Text(widget.title,),
+        ),
+        body: body(),      
+      )
+    );    
+  }
+
+  Widget body() {
+    return SingleChildScrollView(
         padding: EdgeInsets.all(10.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -173,8 +191,7 @@ class _CaloryPage extends State<CaloryPage> {
             ),
           ],
         ),        
-      ),
-    );
+      );
   }
 
   Future<Null> calculateAge() async {

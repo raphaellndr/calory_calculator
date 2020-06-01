@@ -10,4 +10,7 @@ class CustomText extends Text {
       style: TextStyle(color: color, fontSize: fontSize)
     );
 
+  Text prout() {
+    return Text('prout');
+  }
 }
