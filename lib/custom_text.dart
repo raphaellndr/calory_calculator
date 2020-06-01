@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class CustomText extends Text {
 
   CustomText(String string, {color: Colors.white, textAlign: TextAlign.center, fontSize: 20.0}): 
