@@ -18,11 +18,11 @@ $ git clone https://github.com/raphaellndr/calory_calculator.git
 
 ### Install Flutter
 
-To install this app on your device (whether it is an Android emulator or not), you will need your have Flutter on your computer. If you don't, simply install it by following the [official tutorial](https://flutter.dev/docs/get-started/install).
+To install this app on your device (whether it is an Android/iOS emulator or not), you will need your have Flutter on your computer. If you don't, simply install it by following the [official tutorial](https://flutter.dev/docs/get-started/install).
 
 ### Run the project
 
-Once you did everything right, simply plug your phone into your computer or start an Android emulator, and run this command in a terminal :
+Once you did everything right, simply plug your phone into your computer or start an Android/iOS emulator, and run this command in a terminal :
 
 ```
 $ flutter run
